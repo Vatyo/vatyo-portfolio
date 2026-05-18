@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasile — Software Engineer & Web Developer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+         <a href="#" class="nav-logo">vatyo.dev</a>
+        <div class="nav-links">
+            <a href="#services" class="nav-link" data-en="Services" data-ro="Servicii">Services</a>
+            <a href="#portfolio" class="nav-link" data-en="Portfolio" data-ro="Portofoliu">Portfolio</a>
+            <a href="#about" class="nav-link" data-en="About" data-ro="Despre mine">About</a>
+            <a href="#contact" class="nav-link" data-en="Contact" data-ro="Contact">Contact</a>
+            <!-- Language switch button -->
+            <button class="lang-btn" onclick="switchLang()">RO</button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-tag" data-en="Available for work" data-ro="Disponibil pentru proiecte">Available for work</div>
+        <h1 data-en="Software Engineer<br>& Web Developer" data-ro="Inginer Software<br>& Web Developer">Software Engineer<br>& Web Developer</h1>
+        <p data-en="I build professional websites and web applications for small businesses across the UK. High-quality , real results, delivered on time." data-ro="Construiesc site-uri profesionale și aplicații web pentru afaceri mici din Regatul Unit. Calitate inaltă, rezultate reale, livrate la timp.">I build professional websites and web applications for small businesses across the United Kingdom. High-quality , real results, delivered on time.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary" data-en="Get a quote" data-ro="Cere o ofertă">Get a quote</a>
+            <a href="#portfolio" class="btn-secondary" data-en="View portfolio" data-ro="Vezi portofoliu">View portfolio</a>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section">
+        <div class="section-label" data-en="Services & Pricing" data-ro="Servicii & Prețuri">Services & Pricing</div>
+
+        <div class="services-grid">
+
+            <!-- Basic site -->
+            <div class="service-card">
+                <div class="service-name" data-en="Presentation Website" data-ro="Site de Prezentare">Presentation Website</div>
+                
+                <div class="service-desc" data-en="A clean, professional site to showcase your business online." data-ro="Un site curat și profesional pentru afacerea ta.">A clean, professional site to showcase your business online.</div>
+                <ul class="service-features">
+                    <li data-en="Up to 5 pages" data-ro="Până la 5 pagini">✓ Up to 5 pages</li>
+                    <li data-en="Mobile friendly" data-ro="Optimizat pentru mobil">✓ Mobile friendly</li>
+                    <li data-en="HTTPS included" data-ro="HTTPS inclus">✓ HTTPS included</li>
+                    
+            </div>
+
+            <!-- Admin panel site -->
+            <div class="service-card featured">
+                <div class="service-badge" data-en="Most popular" data-ro="Cel mai popular">Most popular</div>
+                <div class="service-name" data-en="Website with Admin Panel" data-ro="Site cu Panou Admin">Website with Admin Panel</div>
+                
+                <div class="service-desc" data-en="Full control over your content — add, edit and remove products yourself." data-ro="Control complet — adaugă, editează și șterge produse singur.">Full control over your content — add, edit and remove products yourself.</div>
+                <ul class="service-features">
+                    <li data-en="Everything in Basic" data-ro="Tot din Basic">✓ Everything in Basic</li>
+                    <li data-en="Secure admin panel" data-ro="Panou admin securizat">✓ Secure admin panel</li>
+                    <li data-en="Product management" data-ro="Gestionare produse">✓ Product management</li>
+                   
+            </div>
+
+            <!-- Maintenance -->
+            <div class="service-card">
+                <div class="service-name" data-en="Monthly Maintenance" data-ro="Mentenanță Lunară">Monthly Maintenance</div>
+
+                <div class="service-desc" data-en="Keep your site running smoothly with regular updates and support." data-ro="Menține site-ul funcțional cu actualizări regulate.">Keep your site running smoothly with regular updates and support.</div>
+                <ul class="service-features">
+                    <li data-en="Content updates" data-ro="Actualizări conținut">✓ Content updates</li>
+                    <li data-en="Bug fixes" data-ro="Rezolvare erori">✓ Bug fixes</li>
+                    <li data-en="Priority support" data-ro="Suport prioritar">✓ Priority support</li>
+                    <li data-en="Monthly report" data-ro="Raport lunar">✓ Monthly report</li>
+                    
+                </ul>
+            
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio" class="section">
+        <div class="section-label" data-en="Portfolio" data-ro="Portofoliu">Portfolio</div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-tag" data-en="Live project" data-ro="Proiect live">Live project</div>
+                <div class="project-name">Atelier Ivonna</div>
+                <div class="project-desc" data-en="Fashion boutique website with product catalog and secure admin panel for product management." data-ro="Site pentru un atelier de modă cu catalog de produse și panou admin securizat.">Fashion boutique website with product catalog and secure admin panel for product management.</div>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <a href="https://atelier-ivonna.onrender.com" target="_blank" class="project-link" data-en="View live site →" data-ro="Vezi site live →">View live site →</a>
+            </div>
+
+            <div class="project-card placeholder">
+                <div class="project-tag" data-en="Your project" data-ro="Proiectul tău">Your project</div>
+                <div class="project-name" data-en="Your business here" data-ro="Afacerea ta aici">Your business here</div>
+                <div class="project-desc" data-en="Currently accepting new clients. Get in touch to discuss your project." data-ro="Accept clienți noi. Contactează-mă pentru a discuta proiectul tău.">Currently accepting new clients. Get in touch to discuss your project.</div>
+                <a href="#contact" class="project-link" data-en="Get in touch →" data-ro="Contactează-mă →">Get in touch →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about-section">
+        <div class="section-label" data-en="About me" data-ro="Despre mine">About me</div>
+        <div class="about-content">
+            <div class="about-text">
+                <p data-en="I'm Vasile, a Software Engineering student at Regent College London with hands-on experience building and deploying real-world web applications." data-ro="Sunt Vasile, student la Software Engineering la Regent College London, cu experiență practică în construirea și deployarea aplicațiilor web reale.">I'm Vasile, a Software Engineering student at Regent College London with hands-on experience building and deploying real-world web applications.</p>
+                <p data-en="I specialise in Python Flask backends, clean HTML/CSS frontends, and SQLite databases — building complete solutions from scratch to deployment." data-ro="Sunt specializat în backend Python Flask, frontend HTML/CSS curat și baze de date SQLite — construind soluții complete de la zero până la deployment.">I specialise in Python Flask backends, clean HTML/CSS frontends, and SQLite databases — building complete solutions from scratch to deployment.</p>
+                <div class="skills-list">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>HTML/CSS</span>
+                    <span>SQLite</span>
+                    <span>MySQL</span>
+                    <span>Git</span>
+                    <span>Java</span>
+                    <span>C#</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact-section">
+        <div class="section-label" data-en="Get in touch" data-ro="Contactează-mă">Get in touch</div>
+        <h2 data-en="Let's work together" data-ro="Hai să lucrăm împreună">Let's work together</h2>
+        <p data-en="Based in London. Available for projects across the UK." data-ro="Bazat în Londra. Disponibil pentru proiecte din toată UK.">Based in London. Available for projects across the UK.</p>
+
+        <!-- Success message -->
+        {% if success %}
+        <div class="success-msg" data-en="Message sent successfully! I'll get back to you soon." data-ro="Mesaj trimis cu succes! Vă voi răspunde în curând.">Message sent successfully! I'll get back to you soon.</div>
+        {% endif %}
+
+        <!-- Contact form -->
+        <form method="POST" action="/contact" class="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-en="Your name" data-ro="Numele tău">Your name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Your email" data-ro="Email-ul tău">Your email</label>
+                    <input type="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-en="Message" data-ro="Mesaj">Message</label>
+                <textarea name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-btns">
+                <button type="submit" class="btn-primary" data-en="Send message" data-ro="Trimite mesaj">Send message</button>
+                <a href="https://wa.me/447777777777" target="_blank" class="btn-whatsapp" data-en="WhatsApp" data-ro="WhatsApp">WhatsApp</a>
+            </div>
+        </form>
+
+        <div class="contact-email">
+            <a href="mailto:vatyo@yahoo.com">vatyo@yahoo.com</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-text">vatyo.dev — London, UK</div>
+        <div class="footer-text">© 2025 Vasile. All rights reserved.</div>
+    </footer>
+
+    <!-- ===== LANGUAGE SWITCH SCRIPT ===== -->
+    <script>
+        // Current language - default English
+        let currentLang = 'en';
+
+        function switchLang() {
+            // Toggle between English and Romanian
+            currentLang = currentLang === 'en' ? 'ro' : 'en';
+
+            // Update button text
+            document.querySelector('.lang-btn').textContent = currentLang === 'en' ? 'RO' : 'EN';
+
+            // Update all elements with data-en and data-ro attributes
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+                if (text) el.innerHTML = text;
+            });
+        }
+    </script>
+
+</body>
+</html>
