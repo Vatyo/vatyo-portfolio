@@ -11,6 +11,8 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = 'vatyoo@gmail.com'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'vatyoo@gmail.com')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'swchtcjnuzclvjjo')
 
 mail = Mail(app)
 
