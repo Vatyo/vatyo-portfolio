@@ -1,22 +1,42 @@
 from flask import Flask, render_template, request
-import os   
-#Create a Flask application
+from flask_mail import Mail, Message
+import os
+
 app = Flask(__name__)
-#Define a route for the home page
+
+# ===== EMAIL CONFIGURATION =====
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+
+mail = Mail(app)
+
+# ===== MAIN PAGE =====
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
-# Contact form route
+
+# ===== CONTACT FORM =====
 @app.route('/contact', methods=['POST'])
-def contact():  
+def contact():
     name = request.form['name']
     email = request.form['email']
     message = request.form['message']
-     # For now just print - later we can add email sending
-    print(f"New message from {name} ({email}): {message}")
-    # Here you can add code to save the contact form data to a database or send an email
-    return render_template('contact_success.html', name=name)
-#start server
+
+    # Send email
+    msg = Message(
+        subject=f"New message from {name} — vatyo.dev",
+        sender=app.config['MAIL_USERNAME'],
+        recipients=['vatyoo@gmail.com'],
+        body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+    )
+    mail.send(msg)
+
+    return render_template('index.html', success=True)
+
+# ===== START SERVER =====
 if __name__ == '__main__':
-   port = int(os.environ.get('PORT', 5000))
-   app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
