@@ -491,6 +491,6 @@ footer {
         padding: 48px 20px;
     }
     html {
-    scroll-behavior: smooth;
-     }
+        scroll-behavior: smooth;
+    }
 }
