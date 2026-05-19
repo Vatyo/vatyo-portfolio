@@ -1,20 +1,12 @@
 from flask import Flask, render_template, request, jsonify
-from flask_mail import Mail, Message
-from dotenv import load_dotenv
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
 import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
 app = Flask(__name__)
-
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
-
-mail = Mail(app)
 
 @app.route('/')
 def home():
@@ -26,14 +18,28 @@ def contact():
     email = request.form['email']
     message = request.form['message']
 
-    msg = Message(
-        subject=f"New message from {name} — vatyo.dev",
-        recipients=['vatyoo@gmail.com'],
-        body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
-    )
-    mail.send(msg)
+    # Configure Brevo API
+    configuration = sib_api_v3_sdk.Configuration()
+    configuration.api_key['api-key'] = os.environ.get('BREVO_API_KEY')
 
-    return jsonify({'success': True})
+    api_instance = sib_api_v3_sdk.TransactionalEmailsApi(
+        sib_api_v3_sdk.ApiClient(configuration)
+    )
+
+    # Create email
+    send_email = sib_api_v3_sdk.SendSmtpEmail(
+        to=[{"email": "vatyoo@gmail.com", "name": "Vasile"}],
+        sender={"email": "vatyoo@gmail.com", "name": "vatyo.dev"},
+        subject=f"New message from {name} — vatyo.dev",
+        text_content=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+    )
+
+    try:
+        api_instance.send_transac_email(send_email)
+        return jsonify({'success': True})
+    except ApiException as e:
+        print(f"Error: {e}")
+        return jsonify({'success': False}), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
