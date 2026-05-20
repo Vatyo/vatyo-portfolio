@@ -521,7 +521,7 @@ footer {
 
 .footer-social {
     display: flex;
-    gap: 48px;
+    gap: 38px;
 }
 
 .footer-social a {
