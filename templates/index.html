@@ -3,6 +3,7 @@
     
 <head>
     <meta name="theme-color" content="#1a2744">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='uploads/logo_vatyo_dev.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasile — Software Engineer & Web Developer</title>
@@ -14,7 +15,8 @@
 
     <!-- ===== NAVIGATION ===== -->
     <nav>
-        <a href="#" class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">vatyo.dev</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+    <img src="{{ url_for('static', filename='uploads/logo_vatyo_dev.png') }}" alt="vatyo.dev" style="height: 35px; width: auto;"></a>
         <div class="nav-links">
             <a href="#services" class="nav-link" data-en="Services" data-ro="Servicii">Services</a>
             <a href="#portfolio" class="nav-link" data-en="Portfolio" data-ro="Portofoliu">Portfolio</a>
